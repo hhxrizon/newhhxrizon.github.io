@@ -1,0 +1,78 @@
+<section id="page2">
+<div class="bg-detail bg-d-cross" style="top:5%;left:10%"></div>
+<div class="bg-detail bg-d-dot" style="top:45%;left:48%"></div>
+<div class="bg-detail bg-d-square" style="bottom:5%;left:5%"></div>
+<div class="bg-detail bg-d-square" style="top:15%;right:5%"></div>
+<div class="bg-detail bg-d-line-v" style="bottom:20%;right:3%"></div>
+<div class="bg-detail bg-d-line-h" style="top:5%;right:40%"></div>
+<div class="bg-detail bg-d-cross" style="bottom:8%;left:48%"></div>
+<div class="bg-detail bg-d-dot" style="top:25%;left:2%"></div>
+<div class="hud-side-frame left"><div class="hud-decor-box"></div><div class="hud-txt-vert">EXAMPLES</div><div class="hud-decor-box"></div></div>
+<div class="hud-side-frame right"><div class="hud-decor-box"></div><div class="hud-txt-vert">EXAMPLES</div><div class="hud-decor-box"></div></div>
+
+<div class="flow-container" style="max-width:1400px;height:60vh;grid-template-columns:1fr 1fr;grid-template-rows:1.6fr 0.4fr;align-content:center;gap:30px;display:grid;margin:auto">
+    
+    <div class="step-frame" style="height:100%; display:flex; flex-direction:column; cursor:default; padding: 35px 65px; justify-content: center;">
+        <div class="white-corner c-tl"></div>
+        <div class="white-corner c-br"></div>
+        
+        <div class="step-meta" style="position: static; margin-bottom: 5px;">
+            <span class="step-index">01 // SCRIPTS</span>
+            <span class="step-hex">LUAU</span>
+        </div>
+
+        <div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
+            <h3 style="margin-bottom:10px">SYSTEM</h3>
+            <div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
+                <pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Text = "Hello World!"
+local EventFolder = ReplicatedStorage.Events
+local Event = EventFolder.Event 
+local ModuleFolder = ReplicatedStorage.Modules
+local GameModule = require(ModuleFolder.GameModule)
+local function PrintAfterWait()
+    task.wait(GameModule.TimerLenght)
+    print(Text)
+end
+Event.OnServerEvent:Connect(PrintAfterWait)</code></pre>
+            </div>
+        </div>
+        <div class="data-tag">PREVIEW</div>
+    </div>
+
+    <div style="height:100%; display:flex; flex-direction:column;">
+        <div class="step-frame" style="flex: 0 1 85%; display:flex; flex-direction:column; cursor:default; padding: 35px 65px; justify-content: center;">
+            <div class="white-corner c-tl"></div>
+            <div class="white-corner c-br"></div>
+            
+            <div class="step-meta" style="position: static; margin-bottom: 5px;">
+                <span class="step-index">02 // MODULES</span>
+                <span class="step-hex">0000</span>
+            </div>
+
+            <div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
+                <h3 style="margin-bottom:10px">MODULE</h3>
+                <div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
+                    <pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local Module = {
+    TimerLenght = 10,
+}
+return Module</code></pre>
+                </div>
+            </div>
+            <div class="data-tag">PREVIEW</div>
+        </div>
+
+        <div class="neural-footer" style="margin-top:auto; padding:15px 0 0 0; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-family:'Fira Code'; font-size:10px; color:#555">INFO: <span style="color:#fff">ANYTHING YOU WANT CUSTOMIZABLE</span></div>
+        </div>
+    </div>
+
+    <div class="node-item" onclick="window.open('YOUR_CUSTOM_LINK_HERE','_blank')" style="grid-column:1 / -1; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer">
+        <div class="white-corner c-tl"></div>
+        <div class="white-corner c-br"></div>
+        <span class="node-label-neural">LINK_01</span>
+        <div class="node-value" style="font-size:20px">VIEW FULL PORTFOLIO</div>
+        <div class="data-tag">MEDIA</div>
+    </div>
+</div>
+</section>
