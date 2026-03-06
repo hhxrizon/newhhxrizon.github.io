@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>hhxrizon | All Examples</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Fira+Code:wght@400;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg0:#080808;--acc:#ff4500;--grad:linear-gradient(90deg,#ff8c00 0%,#ff4500 100%)}
+body{background:var(--bg0);color:#fff;font-family:Montserrat,sans-serif;overflow-x:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 80px}
+.unified-bg-canvas{position:fixed;inset:0;z-index:-1;background:#050505;overflow:hidden}
+.unified-bg-canvas::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#1a0a00 0%,#050505 100%);opacity:0.8}
+@keyframes starMove{from{transform:translateY(0)}to{transform:translateY(-1000px)}}
+@keyframes scanAnim{0%{top:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+@keyframes whiteFlicker{0%,100%{opacity:1}50%{opacity:0.7}}
+.unified-bg-canvas::after{content:"";position:absolute;inset:-100%;background-image:linear-gradient(rgba(255,69,0,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,69,0,0.05) 1px,transparent 1px);background-size:60px 60px;animation:starMove 100s linear infinite;mask-image:radial-gradient(ellipse at center,black,transparent 90%)}
+.bg-detail{position:absolute;background:#fff;z-index:0;pointer-events:none}
+.bg-d-cross{width:15px;height:1px}
+.bg-d-cross::after{content:'';position:absolute;width:1px;height:15px;background:#fff;left:7px;top:-7px}
+.bg-d-dot{width:3px;height:3px;border-radius:50%}
+.bg-d-line-v{width:1px;height:100px;opacity:0.3}
+.bg-d-line-h{height:1px;width:100px;opacity:0.3}
+.bg-d-square{width:8px;height:8px;border:1px solid #fff;background:transparent}
+.hud-side-frame{position:fixed;top:40px;bottom:40px;width:60px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;z-index:10;padding:20px 0}
+.hud-side-frame.left{left:20px;border-left:1px solid rgba(255,69,0,0.2)}
+.hud-side-frame.right{right:20px;border-left:1px solid rgba(255,69,0,0.2);transform:rotate(180deg)}
+.hud-txt-vert{writing-mode:vertical-rl;text-orientation:mixed;font-family:'Fira Code';font-size:10px;color:rgba(255,255,255,0.1);text-transform:uppercase;letter-spacing:4px}
+.hud-decor-box{width:10px;height:10px;border:1px solid var(--acc);opacity:0.3}
+.grid-container{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:20px;width:100%;max-width:1600px;height:85vh;z-index:2;position:relative}
+.example-frame{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);position:relative;padding:25px;display:flex;flex-direction:column;overflow:hidden;backdrop-filter:blur(15px);transition:0.4s cubic-bezier(0.2,1,0.3,1)}
+.example-frame:hover{background:rgba(255,255,255,0.07);border-color:#fff;transform:translateY(-5px)}
+.white-corner{position:absolute;width:6px;height:6px;border:1.5px solid rgba(255,255,255,0.3);opacity:0;transition:0.4s;z-index:5}
+.example-frame:hover .white-corner{opacity:1}
+.c-tl{top:10px;left:10px;border-right:0;border-bottom:0}
+.c-br{bottom:10px;right:10px;border-left:0;border-top:0}
+.frame-index{font-family:'Fira Code';font-size:11px;color:#fff;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px;font-weight:700}
+.frame-index::before{content:"//";color:var(--acc);animation:whiteFlicker 2s infinite}
+.frame-title{font-family:'Montserrat';font-size:24px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:-1px;margin-bottom:12px}
+.media-slot{flex:1;width:100%;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.media-slot img,.media-slot video{width:100%;height:100%;object-fit:cover}
+.placeholder-text{font-family:'Fira Code';font-size:11px;color:#444;letter-spacing:1px}
+.example-frame::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--acc);box-shadow:0 0 15px var(--acc);opacity:0;z-index:10}
+.example-frame:hover::after{animation:scanAnim 1.5s linear infinite;opacity:1; z-index: -1;}
+</style>
+</head>
+<body>
+<div class="unified-bg-canvas"></div>
+<div class="bg-detail bg-d-line-v" style="top:12%; left:85px"></div>
+<div class="bg-detail bg-d-line-v" style="bottom:22%; right:85px"></div>
+<div class="bg-detail bg-d-line-h" style="top:28px; left:17%"></div>
+<div class="bg-detail bg-d-line-h" style="bottom:25px; right:25%"></div>
+<div class="bg-detail bg-d-cross" style="top:45%; left:90px"></div>
+<div class="bg-detail bg-d-cross" style="bottom:35%; right:90px"></div>
+<div class="bg-detail bg-d-dot" style="top:5%; left:30%"></div>
+<div class="bg-detail bg-d-dot" style="bottom:5%; right:40%"></div>
+<div class="bg-detail bg-d-square" style="top:75%; left:88px"></div>
+<div class="bg-detail bg-d-square" style="top:25%; right:88px"></div>
+<div class="hud-side-frame left"><div class="hud-decor-box"></div><div class="hud-txt-vert">ALL EXAMPLES</div><div class="hud-decor-box"></div></div>
+<div class="hud-side-frame right"><div class="hud-decor-box"></div><div class="hud-txt-vert">ALL EXAMPLES</div><div class="hud-decor-box"></div></div>
+<main class="grid-container">
+<script>
+for(let i=1;i<=12;i++){
+let idx=i<10?'0'+i:i;
+document.write(`
+<div class="example-frame">
+<div class="white-corner c-tl"></div><div class="white-corner c-br"></div>
+<span class="frame-index">EXAM_${idx}</span>
+<div class="frame-title">PROJECT NAME</div>
+<div class="media-slot">
+<span class="placeholder-text">TO BE ADDED</span>
+</div>
+</div>
+`);}
+</script>
+</main>
+</body>
+</html>
