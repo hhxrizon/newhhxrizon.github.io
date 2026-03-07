@@ -94,10 +94,10 @@ font-size:14px
 <span class="frame-index">EXAM_01</span>
 <div class="frame-title">BLACKOUT</div>
 <div class="media-slot">
-<video autoplay muted loop playsinline id="vid1">
+<video autoplay muted loop playsinline>
 <source src="2026-02-05_15-28-06.mp4" type="video/mp4">
 </video>
-<div class="fs-btn" onclick="openFS('vid1')">⛶</div>
+<div class="fs-btn" onclick="openFS(this.previousElementSibling)">⛶</div>
 </div>
 </div>
 <div class="example-frame">
@@ -105,10 +105,10 @@ font-size:14px
 <span class="frame-index">EXAM_02</span>
 <div class="frame-title">DOORS</div>
 <div class="media-slot">
-<video autoplay muted loop playsinline id="vid1">
+<video autoplay muted loop playsinline>
 <source src="2026-02-05_15-37-29.mp4" type="video/mp4">
 </video>
-<div class="fs-btn" onclick="openFS('vid1')">⛶</div>
+<div class="fs-btn" onclick="openFS(this.previousElementSibling)">⛶</div>
 </div>
 </div>
 <div class="example-frame">
@@ -116,10 +116,10 @@ font-size:14px
 <span class="frame-index">EXAM_03</span>
 <div class="frame-title">NAME TAGS</div>
 <div class="media-slot">
-<video autoplay muted loop playsinline id="vid1">
+<video autoplay muted loop playsinline>
 <source src="simplescreenrecorder-2026-02-08_15.02.18.mp4" type="video/mp4">
 </video>
-<div class="fs-btn" onclick="openFS('vid1')">⛶</div>
+<div class="fs-btn" onclick="openFS(this.previousElementSibling)">⛶</div>
 </div>
 </div>
 <div class="example-frame">
@@ -127,10 +127,10 @@ font-size:14px
 <span class="frame-index">EXAM_04</span>
 <div class="frame-title">CASES</div>
 <div class="media-slot">
-<video autoplay muted loop playsinline id="vid1">
+<video autoplay muted loop playsinline>
 <source src="simplescreenrecorder-2026-02-08_14.27.03.mp4" type="video/mp4">
 </video>
-<div class="fs-btn" onclick="openFS('vid1')">⛶</div>
+<div class="fs-btn" onclick="openFS(this.previousElementSibling)">⛶</div>
 </div>
 </div>
 <div class="example-frame">
@@ -183,9 +183,9 @@ font-size:14px
 </div>
 </main>
 <script>
-function openFS(id){
+function openFS(el){
 event.stopPropagation();
-const el=document.getElementById(id);
+if(!el) return;
 const target=document.getElementById('fs-target');
 target.innerHTML='';
 const clone=el.cloneNode(true);
