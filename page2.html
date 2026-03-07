@@ -10,17 +10,17 @@
 <div class="hud-side-frame left"><div class="hud-decor-box"></div><div class="hud-txt-vert">EXAMPLES</div><div class="hud-decor-box"></div></div>
 <div class="hud-side-frame right"><div class="hud-decor-box"></div><div class="hud-txt-vert">EXAMPLES</div><div class="hud-decor-box"></div></div>
 <div class="flow-container" style="max-width:1400px;height:60vh;grid-template-columns:1fr 1fr;grid-template-rows:1.6fr 0.4fr;align-content:center;gap:30px;display:grid;margin:auto">
-    <div class="step-frame" style="height:100%; display:flex; flex-direction:column; cursor:default; padding: 35px 65px; justify-content: center;">
-        <div class="white-corner c-tl"></div>
-        <div class="white-corner c-br"></div>
-        <div class="step-meta" style="position: static; margin-bottom: 5px;">
-            <span class="step-index">SCRT_01</span>
-            <span class="step-hex">LUAU</span>
-        </div>
-        <div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
-            <h3 style="margin-bottom:10px">SYSTEM</h3>
-            <div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
-                <pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local ReplicatedStorage = game:GetService("ReplicatedStorage")
+<div class="step-frame" style="height:100%; display:flex; flex-direction:column; cursor:default; padding: 35px 65px; justify-content: center;">
+<div class="white-corner c-tl"></div>
+<div class="white-corner c-br"></div>
+<div class="step-meta" style="position: static; margin-bottom: 5px;">
+<span class="step-index">SCRT_01</span>
+<span class="step-hex">LUAU</span>
+</div>
+<div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
+<h3 style="margin-bottom:10px">SYSTEM</h3>
+<div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
+<pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Text = "Hello World!"
 local EventFolder = ReplicatedStorage.Events
 local Event = EventFolder.Event 
@@ -31,47 +31,44 @@ local function PrintAfterWait()
     print(Text)
 end
 Event.OnServerEvent:Connect(PrintAfterWait)</code></pre>
-            </div>
-        </div>
-        <div class="data-tag">PREVIEW</div>
-    </div>
-    <div style="height:100%; display:flex; flex-direction:column;">
-        <div class="step-frame" style="flex: 0 1 85%; display:flex; flex-direction:column; cursor:default; padding: 35px 65px; justify-content: center;">
-            <div class="white-corner c-tl"></div>
-            <div class="white-corner c-br"></div>
-            <div class="step-meta" style="position: static; margin-bottom: 5px;">
-                <span class="step-index">MDLE_01</span>
-                <span class="step-hex">0000</span>
-            </div>
-            <div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
-                <h3 style="margin-bottom:10px">MODULE</h3>
-                <div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
-                    <pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local Module = {
+</div>
+</div>
+<div class="data-tag">PREVIEW</div>
+</div>
+<div style="height:100%; display:flex; flex-direction:column;">
+<div class="step-frame" style="flex: 0 1 85%; display:flex; flex-direction:column; cursor:default; padding: 35px 65px; justify-content: center;">
+<div class="white-corner c-tl"></div>
+<div class="white-corner c-br"></div>
+<div class="step-meta" style="position: static; margin-bottom: 5px;">
+<span class="step-index">MDLE_01</span>
+<span class="step-hex">0000</span>
+</div>
+<div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
+<h3 style="margin-bottom:10px">MODULE</h3>
+<div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
+<pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local Module = {
     TimerLenght = 10,
 }
 return Module</code></pre>
-                </div>
-            </div>
-            <div class="data-tag">PREVIEW</div>
-        </div>
-
-        <div class="neural-footer" style="margin-top:auto; padding:15px 0 0 0; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-family:'Fira Code'; font-size:10px; color:#555">INFO: <span style="color:#fff">ANYTHING YOU WANT CUSTOMIZABLE</span></div>
-        </div>
-    </div>
-
-    <a href="https://hhxrizon.github.io/examples/" target="_blank" style="text-decoration:none; grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-    <div class="node-item" style="height:100%; display:flex; align-items:center; justify-content:flex-end; cursor:pointer; position:relative; padding-right: 15px;">
-        <div class="white-corner c-tl"></div>
-        <span class="node-label-neural" style="left: 20px;">LINK_01</span>
-        <div class="node-value" style="font-size:20px">VIEW ALL</div>
-    </div>
-    
-    <div class="node-item" style="height:100%; display:flex; align-items:center; justify-content:flex-start; cursor:pointer; position:relative; padding-left: 15px;">
-        <div class="white-corner c-br"></div>
-        <div class="node-value" style="font-size:20px">EXAMPLES</div>
-        <div class="data-tag" style="right: 20px;">MEDIA</div>
-    </div>
+</div>
+</div>
+<div class="data-tag">PREVIEW</div>
+</div>
+<div class="neural-footer" style="margin-top:auto; padding:15px 0 0 0; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center;">
+<div style="font-family:'Fira Code'; font-size:10px; color:#555">INFO: <span style="color:#fff">ANYTHING YOU WANT CUSTOMIZABLE</span></div>
+</div>
+</div>
+<a href="https://hhxrizon.github.io/examples/" target="_blank" style="text-decoration:none; grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:30px; height:100%;">
+<div class="node-item" style="height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative;">
+<div class="white-corner c-tl"></div>
+<span class="node-label-neural">LINK_01</span>
+<div class="node-value" style="font-size:20px">VIEW ALL</div>
+</div>
+<div class="node-item" style="height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative;">
+<div class="white-corner c-br"></div>
+<div class="node-value" style="font-size:20px">EXAMPLES</div>
+<div class="data-tag">MEDIA</div>
+</div>
 </a>
 </div>
 </section>
