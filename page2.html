@@ -20,16 +20,22 @@
 <div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
 <h3 style="margin-bottom:10px">SYSTEM</h3>
 <div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
-<pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local ReplicatedStorage = game:GetService("ReplicatedStorage")
+<pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">-- Services
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+-- Variables
 local Text = "Hello World!"
+-- Events
 local EventFolder = ReplicatedStorage.Events
 local Event = EventFolder.Event 
+-- Modules
 local ModuleFolder = ReplicatedStorage.Modules
 local GameModule = require(ModuleFolder.GameModule)
+-- Functions
 local function PrintAfterWait()
     task.wait(GameModule.TimerLenght)
     print(Text)
 end
+-- Logic
 Event.OnServerEvent:Connect(PrintAfterWait)</code></pre>
 </div>
 </div>
@@ -46,7 +52,8 @@ Event.OnServerEvent:Connect(PrintAfterWait)</code></pre>
 <div class="step-content" style="display:flex; flex-direction:column; min-height:0;">
 <h3 style="margin-bottom:10px">MODULE</h3>
 <div class="pair-desc" style="opacity:1; overflow:hidden; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05); padding:15px; display:flex; flex-direction:column; max-height:none !important; width:100%; box-sizing:border-box">
-<pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">local Module = {
+<pre style="margin:0; overflow:hidden; width:100%"><code class="language-lua" style="font-size:13px; line-height:1.5; font-family:'Fira Code', monospace; display:block; width:100%">-- Module
+    local Module = {
     TimerLenght = 10,
 }
 return Module</code></pre>
